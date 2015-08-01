@@ -1,12 +1,14 @@
 language: node_js
 node_js:
   - "0.10"
-  - "0.11"
+  - "0.12"
+  - "iojs"
 
 # Use faster Docker architecture on Travis.
 sudo: false
 
-script: "npm test && npm run coveralls"
+script:        npm test
+after_success: npm run coveralls
 
 notifications:
   webhooks:
